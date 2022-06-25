@@ -1,5 +1,4 @@
-// import s from './ContactList.module.css';
-// import PropTypes from 'prop-types';
+import PropTypes from 'prop-types';
 import ContactItem from 'components/ContactItem';
 
 const ContactList = ({ filterContacts, onClickDelete }) => {
@@ -18,6 +17,13 @@ const ContactList = ({ filterContacts, onClickDelete }) => {
       })}
     </ul>
   );
+};
+
+ContactList.propTypes = {
+  filterContacts: PropTypes.arrayOf(
+    PropTypes.objectOf(PropTypes.string).isRequired
+  ),
+  onClickDelete: PropTypes.func.isRequired,
 };
 
 export default ContactList;
