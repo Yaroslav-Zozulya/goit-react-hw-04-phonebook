@@ -25,7 +25,7 @@ class App extends Component {
   formSubmit = ({ name, number }) => {
     this.setState(prevState => {
       const checkContact = this.state.contacts.find(
-        contact => contact.name === name
+        contact => contact.name.toLowerCase() === name.toLowerCase()
       );
       const contacts = prevState.contacts;
 
@@ -65,7 +65,7 @@ class App extends Component {
           <h1>Phonebook</h1>
           <ContactForm onSubmit={this.formSubmit} />
           <h2>Contacts</h2>
-          <Filter onChange={this.handleChange} />
+          <Filter onChange={this.handleChange} filter={this.state.filter} />
           <ContactList
             filterContacts={this.filterContacts(this.state.filter)}
             onClickDelete={this.deleteContact}

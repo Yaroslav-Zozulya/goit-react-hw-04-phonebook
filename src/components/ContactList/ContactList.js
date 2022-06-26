@@ -21,7 +21,11 @@ const ContactList = ({ filterContacts, onClickDelete }) => {
 
 ContactList.propTypes = {
   filterContacts: PropTypes.arrayOf(
-    PropTypes.objectOf(PropTypes.string).isRequired
+    PropTypes.shape({
+      id: PropTypes.string.isRequired,
+      name: PropTypes.string.isRequired,
+      number: PropTypes.string.isRequired,
+    })
   ),
   onClickDelete: PropTypes.func.isRequired,
 };
