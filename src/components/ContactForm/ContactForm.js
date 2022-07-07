@@ -3,7 +3,10 @@ import s from './ContactForm.module.css';
 import PropTypes from 'prop-types';
 
 class ContactForm extends Component {
-  state = { name: '', number: '' };
+  state = {
+    name: '',
+    number: '',
+  };
 
   handleChange = e => {
     const { name, value } = e.currentTarget;
